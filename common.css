@@ -34,7 +34,9 @@ margin:0px;
 
 
 
-@media(max-width:800px){.widget-content ul{flex-wrap: wrap;}
+@media(max-width:800px;
+	  font-size:20px;
+	  ){.widget-content ul{flex-wrap: wrap;}
 .widget-content li {width:50%;box-sizing: border-box;
 
 }
@@ -42,3 +44,4 @@ margin:0px;
 }
 
 /* レイアウト */
+
