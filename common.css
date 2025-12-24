@@ -3,7 +3,7 @@
 
 
 body{background-color:white;    
-font-size:14px;
+font-size:16px;
 	margin: 4em;	/* 余白の削除 */
 	padding: 0;	/* 余白の削除 */
 	height: 100%;	/* 縦の高さを100% */
@@ -23,7 +23,7 @@ a:visited {
 a:hover{-webkit-transition:all .3s ease;transition:all .3s ease;color:rgb(222, 222, 222)}
 
 
-img{max-width:60%;}
+img{max-width:80%;}
 
 ul{
 list-style-type: none;
@@ -31,17 +31,14 @@ list-style-type: none;
 margin:0px;
 
 }
-
-
-
-@media(max-width:800px;
-	  font-size:20px;
-	  ){.widget-content ul{flex-wrap: wrap;}
-.widget-content li {width:50%;box-sizing: border-box;
-
+@media screen and (min-width:180px) and ( max-width:1024px) { 
+body{
+font-size:24px;
+}
+img{max-width:90%;}
 }
 
-}
+
+
 
 /* レイアウト */
-
