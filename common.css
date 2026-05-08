@@ -23,7 +23,22 @@ a:visited {
 a:hover{-webkit-transition:all .3s ease;transition:all .3s ease;color:rgb(222, 222, 222)}
 
 
-img{max-width:80%;}
+img {
+    max-width: 500px;    /* 親要素からはみ出さないようにする */
+    width: 400px;       /* ここで「ちょうどいいデカさ」を固定する */
+    height: auto;       /* 画像を歪ませない */
+    display: block;     /* 文字と重ならないように独立させる */
+    margin: 1em 0;      /* 上下に少し隙間を作る */
+}
+
+/* モバイル対応（スマホの時は画面幅に合わせる） */
+@media screen and (max-width: 1024px) { 
+    img {
+        width: 100%;    /* スマホでは画面いっぱいに（またはお好みで80%など） */
+        max-width: 500px; /* ただしデカくなりすぎない上限 */
+    }
+}
+
 
 ul{
 list-style-type: none;
@@ -35,7 +50,10 @@ margin:0px;
 body{
 font-size:24px;
 }
-img{max-width:90%;}
+    img {
+        width: 100%;    /* スマホでは画面いっぱいに（またはお好みで80%など） */
+        max-width: 500px; /* ただしデカくなりすぎない上限 */
+    }
 }
 
 
