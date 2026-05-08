@@ -17,14 +17,18 @@ body {
     image-rendering: pixelated;
     font-weight: normal;
     color: #000000;
+    line-height: 1.6;
 }
 
 /* 固定トップバー */
 .top-nav {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 36px;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 36px;
     background-color: #DDDDDD;
-    border-bottom: 1px solid #000000;
+    border-bottom: 2px solid #000000;
     display: flex;
     align-items: center;
     padding: 0 10px;
@@ -48,6 +52,7 @@ body {
     box-shadow: 1px 1px 0 #ffffff inset, 4px 4px 0 rgba(0,0,0,0.2);
     width: 100%;
     max-width: 550px;
+    box-sizing: border-box;
 }
 
 /* タイトルバー */
@@ -73,7 +78,6 @@ body {
 .content {
     padding: 24px;
     font-size: 17px;
-    line-height: 1.6;
 }
 
 /* 見出しデザイン */
@@ -90,18 +94,13 @@ h3 { font-size: 16px; border-bottom: 1px dashed #666; width: fit-content; }
     margin-top: 20px;
 }
 
-/* フッター（クレジット） */
+/* フッター */
 .site-footer {
     margin-top: 60px;
     text-align: center;
-    font-size: 14px; /* 小さめの文字 */
+    font-size: 14px;
     color: #444;
     line-height: 1.8;
-}
-
-.site-footer a {
-    color: #000;
-    text-decoration: underline;
 }
 
 /* 共通OSボタン */
@@ -115,6 +114,9 @@ h3 { font-size: 16px; border-bottom: 1px dashed #666; width: fit-content; }
     display: inline-flex;
     align-items: center;
     box-shadow: 1px 1px 0 #FFF inset, 2px 2px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    box-sizing: border-box;
+         height: 70%; 
 }
 
 .os-button.current {
@@ -125,40 +127,78 @@ h3 { font-size: 16px; border-bottom: 1px dashed #666; width: fit-content; }
 
 .os-button:active:not(.disabled) {
     box-shadow: none;
-    transform: translate(2px, 2px);
+    transform: translate(1px, 1px);
 }
 
-@media screen and (max-width: 1000px) {
-    /* 全体的に文字を一回り大きくする */
-    body {
-        font-size: 180px; 
+/* --- レスポンシブ調整 --- */
+
+/* タブレット・スマホ共通 (1024px以下) */
+@media screen and (max-width: 1024px) {
+    .top-nav {
+        height: 54px;
+        padding: 0 15px;
     }
 
-    /* メインエリアの余白を詰めてコンテンツ幅を確保 */
+    /* ヘッダー内ボタンの高さ調整（70%程度） */
+    .top-nav .os-button {
+        height: 70%; 
+        padding: 0 16px;
+        font-size: 18px;
+    }
+
     .desktop-area {
-        padding: 60px 10px 40px; /* 左右の余白を20px→10pxに */
-        gap: 20px;
+        padding-top: 90px;
     }
 
-    /* ウィンドウ内の余白調整 */
+    .window {
+        max-width: 92%;
+    }
+}
+
+/* スマホ特化 (768px以下) */
+@media screen and (max-width: 768px) {
+    .top-nav {
+        height: 60px;
+    }
+
+    /* ヘッダー内ボタンのバランス */
+    .top-nav .os-button {
+        height: 65%; /* スマホではさらに余白を持たせてスッキリ */
+        font-size: 20px;
+    }
+
+    .desktop-area {
+        padding-top: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .window {
+        max-width: 100%;
+    }
+
+    /* 本文の文字をさらに大きく */
     .content {
-        padding: 16px; /* 24pxだとスマホでは余白が広すぎるため */
-        font-size: 18px; /* 本文を読みやすく */
+        padding: 20px;
+        font-size: 22px; /* 視認性アップ */
     }
 
-    /* 見出しサイズもスマホ向けに最適化 */
-    h1 { font-size: 22px; }
-    h2 { font-size: 20px; }
-    h3 { font-size: 18px; }
+    /* 見出しサイズ */
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 22px; }
 
-    /* 年数ナビなどのボタンがはみ出さないように折り返し許可 */
+    /* ナビゲーションボタン */
     .year-nav {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 10px;
     }
 
-    /* ボタンを押しやすく少し大きくする（指でのタップ対策） */
-    .os-button {
-        padding: 6px 16px;
+    .year-nav .os-button {
+        padding: 10px 20px;
+        font-size: 20px;
+        min-width: 80px;
+        justify-content: center;
     }
 }
