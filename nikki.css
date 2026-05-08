@@ -72,7 +72,7 @@ body {
 /* 記事本文 */
 .content {
     padding: 24px;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 1.6;
 }
 
@@ -128,10 +128,10 @@ h3 { font-size: 16px; border-bottom: 1px dashed #666; width: fit-content; }
     transform: translate(2px, 2px);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     /* 全体的に文字を一回り大きくする */
     body {
-        font-size: 18px; 
+        font-size: 180px; 
     }
 
     /* メインエリアの余白を詰めてコンテンツ幅を確保 */
