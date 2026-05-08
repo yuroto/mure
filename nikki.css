@@ -127,3 +127,38 @@ h3 { font-size: 16px; border-bottom: 1px dashed #666; width: fit-content; }
     box-shadow: none;
     transform: translate(2px, 2px);
 }
+
+@media screen and (max-width: 600px) {
+    /* 全体的に文字を一回り大きくする */
+    body {
+        font-size: 18px; 
+    }
+
+    /* メインエリアの余白を詰めてコンテンツ幅を確保 */
+    .desktop-area {
+        padding: 60px 10px 40px; /* 左右の余白を20px→10pxに */
+        gap: 20px;
+    }
+
+    /* ウィンドウ内の余白調整 */
+    .content {
+        padding: 16px; /* 24pxだとスマホでは余白が広すぎるため */
+        font-size: 18px; /* 本文を読みやすく */
+    }
+
+    /* 見出しサイズもスマホ向けに最適化 */
+    h1 { font-size: 22px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 18px; }
+
+    /* 年数ナビなどのボタンがはみ出さないように折り返し許可 */
+    .year-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* ボタンを押しやすく少し大きくする（指でのタップ対策） */
+    .os-button {
+        padding: 6px 16px;
+    }
+}
