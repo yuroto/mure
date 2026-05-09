@@ -22,7 +22,7 @@ body {
     image-rendering: pixelated;
     font-weight: normal;
     color: #000000;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 /* 3. 固定トップバー */
@@ -56,7 +56,6 @@ body {
     border: 1px solid #000000;
     box-shadow: 1px 1px 0 #ffffff inset, 4px 4px 0 rgba(0,0,0,0.2);
     width: 100%;
-    /* 550px から 800px に変更（お好みで調整してください） */
     max-width: 800px; 
     box-sizing: border-box;
 }
@@ -81,12 +80,14 @@ body {
 
 /* 6. 本文エリア（PC基準） */
 .content {
-    padding: 24px;
-    font-size: 17px; /* PCでの基本サイズ */
+    padding: 32px;
+    font-size: 17px;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
 }
 
 .content p {
-    margin-bottom: 1.2em;
+    margin-bottom: 1.5em;
 }
 
 /* 7. 見出しデザイン */
@@ -125,33 +126,36 @@ h3 { font-size: 20px; border-bottom: 1px dashed #666; width: fit-content; }
     line-height: 1.8;
 }
 
-/* --- レスポンシブ調整（下に行くほど優先される） --- */
+/* --- レスポンシブ調整（最大サイズ版） --- */
 
 /* タブレット・中画面 (1300px以下) */
 @media screen and (max-width: 1300px) {
     .content {
-        padding: 40px 32px !important;
-        font-size: 32px !important; /* 16の2倍 */
+        padding: 48px 32px !important;
+        font-size: 40px !important; /* 32pxから40pxへ拡大 */
+        line-height: 1.8 !important;
+        letter-spacing: 0.08em !important;
     }
     
     .content p {
-        font-size: 32px !important;
+        font-size: 40px !important; /* 本文テキストも強制拡大 */
+        margin-bottom: 2.0em !important;
     }
 
-    h1 { font-size: 48px !important; }
-    h2 { font-size: 36px !important; border-left-width: 10px !important; }
+    h1 { font-size: 56px !important; }
+    h2 { font-size: 48px !important; border-left-width: 12px !important; }
 
     .top-nav {
-        height: 64px;
+        height: 80px; /* バーも大きく */
     }
 
     .top-nav .os-button {
         height: 75%; 
-        font-size: 28px;
+        font-size: 36px;
     }
 
     .desktop-area {
-        padding-top: 100px;
+        padding-top: 120px;
     }
 
     .window {
@@ -159,8 +163,8 @@ h3 { font-size: 20px; border-bottom: 1px dashed #666; width: fit-content; }
     }
 
     .year-nav .os-button {
-        padding: 16px 32px;
-        font-size: 32px;
+        padding: 20px 40px;
+        font-size: 40px;
     }
 }
 
@@ -168,11 +172,14 @@ h3 { font-size: 20px; border-bottom: 1px dashed #666; width: fit-content; }
 @media screen and (max-width: 768px) {
     .content {
         padding: 32px 16px !important;
-        font-size: 32px !important; 
+        font-size: 40px !important; /* スマホでも40pxを維持 */
+        line-height: 1.6 !important; /* スマホでは少し行間を詰めて調整 */
+        letter-spacing: 0.05em !important;
     }
 
     .content p {
-        font-size: 32px !important;
+        font-size: 40px !important;
+        margin-bottom: 1.8em !important;
     }
 
     .window {
@@ -182,16 +189,20 @@ h3 { font-size: 20px; border-bottom: 1px dashed #666; width: fit-content; }
     }
 
     .desktop-area {
-        padding-top: 110px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-top: 130px;
     }
 
-    /* スマホ見出しの微調整 */
-    h1 { font-size: 40px !important; }
-    h2 { font-size: 32px !important; }
+    h1 { font-size: 52px !important; }
+    h2 { font-size: 44px !important; }
 
     .site-footer {
-        font-size: 16px;
+        font-size: 20px;
+    }
+
+    .top-nav {
+        height: 90px;
+    }
+    .top-nav .os-button {
+        font-size: 40px;
     }
 }
