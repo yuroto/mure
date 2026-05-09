@@ -7,6 +7,13 @@
 }
 
 /* 基本設定 */
+html, body {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
     background-color: #a4b3bf;
     margin: 0;
@@ -138,6 +145,9 @@ h3 { font-size: 20px; border-bottom: 1px dashed #666; width: fit-content; }
 /* タブレット・中画面 (1300px以下) */
 @media screen and (max-width: 1300px) {
     /* タブレットでも思い切って32px（16の2倍）に */
+    body {
+        background-color: #ff0000 !important; /* スマホで見た時だけ背景が赤くなるか？ */
+    }
     .content {
         padding: 48px 32px !important;
         font-size: 32px !important; 
