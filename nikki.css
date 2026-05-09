@@ -68,6 +68,8 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2px 0;
+                    color:white;
+
 }
 
 .title {
@@ -134,6 +136,7 @@ h3 { font-size: 20px; border-bottom: 1px dashed #666; width: fit-content; }
     .title {
         font-size: 40px !important; /* 日付（タイトル）を拡大 */
         padding: 4px 20px !important;
+                color:red;
     }
 
     .title-bar {
@@ -182,6 +185,7 @@ h3 { font-size: 20px; border-bottom: 1px dashed #666; width: fit-content; }
 @media screen and (max-width: 768px) {
     .title {
         font-size: 40px !important; /* スマホでは少しだけ抑えてバランス調整 */
+        color:blue;
     }
 
     .title-bar {
