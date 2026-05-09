@@ -62,11 +62,12 @@ body {
 
 .title-bar {
     background: repeating-linear-gradient(to bottom, #EEEEEE, #EEEEEE 1px, #CCCCCC 1px, #CCCCCC 2px);
-    height: 24px;
+    min-height: 24px; /* 固定高さから最小高さに変更 */
     border-bottom: 1px solid #000000;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2px 0;
 }
 
 .title {
@@ -75,7 +76,7 @@ body {
     font-size: 16px;
     border-left: 1px solid #999999;
     border-right: 1px solid #999999;
-    line-height: 1;
+    line-height: 1.2;
 }
 
 /* 6. 本文エリア（PC基準） */
@@ -126,19 +127,28 @@ h3 { font-size: 20px; border-bottom: 1px dashed #666; width: fit-content; }
     line-height: 1.8;
 }
 
-/* --- レスポンシブ調整（最大サイズ版） --- */
+/* --- レスポンシブ調整 --- */
 
 /* タブレット・中画面 (1300px以下) */
 @media screen and (max-width: 1300px) {
+    .title {
+        font-size: 32px !important; /* 日付（タイトル）を拡大 */
+        padding: 4px 20px !important;
+    }
+
+    .title-bar {
+        min-height: 50px !important;
+    }
+
     .content {
         padding: 48px 32px !important;
-        font-size: 40px !important; /* 32pxから40pxへ拡大 */
+        font-size: 40px !important; 
         line-height: 1.8 !important;
         letter-spacing: 0.08em !important;
     }
     
     .content p {
-        font-size: 40px !important; /* 本文テキストも強制拡大 */
+        font-size: 40px !important;
         margin-bottom: 2.0em !important;
     }
 
@@ -146,7 +156,7 @@ h3 { font-size: 20px; border-bottom: 1px dashed #666; width: fit-content; }
     h2 { font-size: 48px !important; border-left-width: 12px !important; }
 
     .top-nav {
-        height: 80px; /* バーも大きく */
+        height: 80px;
     }
 
     .top-nav .os-button {
@@ -170,16 +180,21 @@ h3 { font-size: 20px; border-bottom: 1px dashed #666; width: fit-content; }
 
 /* スマホ特化 (768px以下) */
 @media screen and (max-width: 768px) {
+    .title {
+        font-size: 28px !important; /* スマホでは少しだけ抑えてバランス調整 */
+    }
+
+    .title-bar {
+        min-height: 44px !important;
+    }
+
     .content {
         padding: 32px 16px !important;
-        font-size: 40px !important; /* スマホでも40pxを維持 */
-        line-height: 1.6 !important; /* スマホでは少し行間を詰めて調整 */
-        letter-spacing: 0.05em !important;
+        font-size: 40px !important; 
     }
 
     .content p {
         font-size: 40px !important;
-        margin-bottom: 1.8em !important;
     }
 
     .window {
