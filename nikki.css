@@ -132,85 +132,68 @@ h3 { font-size: 20px; border-bottom: 1px dashed #666; width: fit-content; }
 }
 
 /* --- レスポンシブ調整 --- */
+/* --- レスポンシブ調整 --- */
+/* --- レスポンシブ調整 --- */
 
-/* タブレット・スマホ共通 (1300px以下) */
+/* タブレット・中画面 (1300px以下) */
 @media screen and (max-width: 1300px) {
-        body {        font-size: 26px; 
-
-        line-height: 1.5; /* 行間を少し詰め気味にして、ドット絵らしさを強調 */
+    /* タブレットでも思い切って32px（16の2倍）に */
+    .content {
+        padding: 48px 32px !important;
+        font-size: 32px !important; 
+        line-height: 1.4;
     }
+
+    /* 見出しもタブレットサイズに合わせて拡大 */
+    h1 { font-size: 48px !important; }
+    h2 { font-size: 36px !important; border-left-width: 10px; }
+    h3 { font-size: 32px !important; }
+
     .top-nav {
-        height: 54px;
-        padding: 0 15px;
+        height: 64px;
+        padding: 0 20px;
     }
 
-    /* ヘッダー内ボタンの高さ調整（70%程度） */
     .top-nav .os-button {
         height: 70%; 
-        padding: 0 16px;
-        font-size: 22px;
+        padding: 0 20px;
+        font-size: 28px;
     }
 
     .desktop-area {
-        padding-top: 90px;
+        padding-top: 100px;
     }
 
     .window {
-        max-width: 92%;
-    }
-        .content {
-        padding: 20px 16px;
-        /* 文字をさらに強調。ドットフォントは大きめの方が読みやすいです */
-        font-size: 26px; 
+        max-width: 95%; /* 画面を広く使う */
     }
 
+    /* ボタン類も押しやすく拡大 */
+    .year-nav .os-button {
+        padding: 16px 32px;
+        font-size: 32px;
+    }
 }
 
 /* スマホ特化 (768px以下) */
-/* スマホ特化 (768px以下) の修正・追加分 */
 @media screen and (max-width: 768px) {
-    /* 1. 本文全体のベースサイズを引き上げ */
-    body {        font-size: 26px; 
-
-        line-height: 1.5; /* 行間を少し詰め気味にして、ドット絵らしさを強調 */
-    }
-
+    /* 基本はタブレットの設定を引き継ぎつつ、余白をスマホ最適化 */
     .content {
-        padding: 20px 16px;
-        /* 文字をさらに強調。ドットフォントは大きめの方が読みやすいです */
-        font-size: 26px; 
+        padding: 32px 16px !important;
+        font-size: 32px !important; 
     }
 
-    /* 2. 見出しをさらに強調 */
-    h1 { 
-        font-size: 34px; 
-        margin-bottom: 1em;
-        line-height: 1.2;
-    }
-    h2 { 
-        font-size: 30px; 
-        border-left-width: 8px; /* 装飾も太くしてバランス調整 */
-        padding-left: 12px;
-    }
-    h3 { 
-        font-size: 26px; 
+    .window {
+        max-width: 100%;
     }
 
-    /* 3. 本文内の段落やテキスト要素 */
-    .content p {
-        margin-bottom: 1.5em;
+    .desktop-area {
+        padding-top: 110px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
-    /* 4. ナビゲーションボタンの文字も大きく */
-    .year-nav .os-button {
-        padding: 12px 24px;
-        font-size: 24px; /* ボタン内の文字も24px以上に */
-        min-width: 100px;
-    }
-
-    /* 5. フッターも小さくなりすぎないよう調整 */
-    .site-footer {
-        font-size: 18px;
-        padding-bottom: 40px;
-    }
+    /* スマホでは見出しを少しだけコンパクトに調整してバランスを取る */
+    h1 { font-size: 40px !important; }
+    h2 { font-size: 32px !important; }
 }
