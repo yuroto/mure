@@ -1,25 +1,28 @@
-/* 未訪問: クリアな水の色 */
+/* --- ハイパーリンク（シックな水モチーフ）の設定 --- */
+
+/* 未訪問: 深みのある静かな紺水の色 */
 .content a:link {
-    color: #0077be;
+    color: #3a6073;
     text-decoration: underline;
-    transition: color 0.2s ease;
+    transition: color 0.15s ease, background-color 0.15s ease;
 }
 
-/* 訪問済み: 少し深さのある静かな水の色 */
+/* 訪問済み: 鉱石を含んだ水のような落ち着いた灰青 */
 .content a:visited {
-    color: #4682b4;
+    color: #607d8b;
 }
 
-/* ホバー時: 太陽光が反射したような明るい水面の色 */
+/* ホバー時: 水面に薄い光が射したような淡い透明感のある青 */
 .content a:hover {
-    color: #00bfff;
+    color: #4f839c;
     text-decoration: none;
-    background-color: rgba(0, 191, 255, 0.1); /* ほんのりと波紋のような背景 */
+    background-color: rgba(96, 125, 139, 0.15); /* 影のついたデスクトップに馴染む静かな波紋エフェクト */
 }
 
-/* クリック（アクティブ）時: 湧き水のような鮮やかな色 */
+/* クリック（アクティブ）時: 一瞬だけ深く沈むような濃いインディゴ */
 .content a:active {
-    color: #20b2aa;
+    color: #2c3e50;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* 1. フォントの定義 */
