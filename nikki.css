@@ -133,7 +133,7 @@ h3 { font-size: 20px; border-bottom: 1px dashed #666; width: fit-content; }
 /* タブレット・中画面 (1300px以下) */
 @media screen and (max-width: 1300px) {
     .title {
-        font-size: 40px !important; /* 日付（タイトル）を拡大 */
+        font-size: 28px !important; /* 日付（タイトル）を拡大 */
         padding: 4px 20px !important;
     }
 
