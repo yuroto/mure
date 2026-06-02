@@ -1,4 +1,30 @@
+/* 未訪問: クリアな水の色 */
+.content a:link {
+    color: #0077be;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+/* 訪問済み: 少し深さのある静かな水の色 */
+.content a:visited {
+    color: #4682b4;
+}
+
+/* ホバー時: 太陽光が反射したような明るい水面の色 */
+.content a:hover {
+    color: #00bfff;
+    text-decoration: none;
+    background-color: rgba(0, 191, 255, 0.1); /* ほんのりと波紋のような背景 */
+}
+
+/* クリック（アクティブ）時: 湧き水のような鮮やかな色 */
+.content a:active {
+    color: #20b2aa;
+}
+
 /* 1. フォントの定義 */
+
+
 @font-face {
     font-family: 'KH-Dot-Akihabara';
     src: url('KH-Dot-Akihabara-16.ttf') format('truetype');
