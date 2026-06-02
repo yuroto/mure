@@ -22,7 +22,7 @@ body {
     image-rendering: pixelated;
     font-weight: normal;
     color: #000000;
-    line-height: 1.6; /* 1.8から少し引き締め */
+    line-height: 1.6;
 }
 
 /* 3. 固定トップバー */
@@ -43,7 +43,7 @@ body {
 
 /* 4. メインエリア */
 .desktop-area {
-    padding: 60px 20px 40px;
+    padding: 70px 20px 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,7 +62,7 @@ body {
 
 .title-bar {
     background: repeating-linear-gradient(to bottom, #EEEEEE, #EEEEEE 1px, #CCCCCC 1px, #CCCCCC 2px);
-    min-height: 28px;
+    min-height: 24px;
     border-bottom: 1px solid #000000;
     display: flex;
     align-items: center;
@@ -72,7 +72,7 @@ body {
 
 .title {
     background-color: #DDDDDD;
-    padding: 2px 15px;
+    padding: 0 15px;
     font-size: 14px;
     border-left: 1px solid #999999;
     border-right: 1px solid #999999;
@@ -81,20 +81,20 @@ body {
 
 /* 6. 本文エリア（PC基準） */
 .content {
-    padding: 24px 32px;
-    font-size: 16px;
+    padding: 32px;
+    font-size: 16px; /* ドットフォントが綺麗に見える標準サイズ */
+    line-height: 1.7;
     letter-spacing: 0.05em;
 }
 
 .content p {
-    margin-top: 0;
-    margin-bottom: 1.2em;
+    margin-bottom: 1.3em;
 }
 
 /* 7. 見出しデザイン */
-h1, h2, h3 { font-weight: normal; margin-top: 1.6em; margin-bottom: 0.8em; }
-h1 { font-size: 24px; border-bottom: 2px solid #000; padding-bottom: 6px; margin-top: 0; }
-h2 { font-size: 20px; border-left: 4px solid #000; padding-left: 8px; }
+h1, h2, h3 { font-weight: normal; margin-top: 1.5em; margin-bottom: 0.8em; }
+h1 { font-size: 24px; border-bottom: 2px solid #000; padding-bottom: 4px; margin-top: 0; }
+h2 { font-size: 20px; border-left: 5px solid #666; padding-left: 10px; }
 h3 { font-size: 16px; border-bottom: 1px dashed #666; width: fit-content; }
 
 /* 8. ボタン・共通UI */
@@ -103,125 +103,140 @@ h3 { font-size: 16px; border-bottom: 1px dashed #666; width: fit-content; }
     color: #000;
     background-color: #DDDDDD;
     border: 1px solid #000;
-    padding: 2px 12px;
+    padding: 3px 12px;
     font-size: 14px;
     display: inline-flex;
     align-items: center;
-    box-shadow: 1px 1px 0 #FFF inset, 2px 2px 0 rgba(0,0,0,0.15);
+    box-shadow: 1px 1px 0 #FFF inset, 2px 2px 0 rgba(0,0,0,0.2);
     cursor: pointer;
     box-sizing: border-box;
-    height: 70%;
+    height: 70%; 
     user-select: none;
 }
 
-/* --- 追加：ホバー・クリック（アクティブ）時のエフェクト --- */
+/* --- ホバー・クリック時のエフェクト（既存クラスに疑似クラスを適用） --- */
 @media (hover: hover) {
+    /* 通常ボタンのホバー：少しだけ背景を明るく */
     .os-button:hover:not(.current) {
-        background-color: #EEEEEE; /* 少し明るくしてホバー感を出す */
+        background-color: #EEEEEE;
     }
 }
 
-/* クリック（選択）された瞬間、影の方向を逆にして凹んだ表現に */
+/* 通常ボタンのクリック時：影を内側に反転させ、1px右下にズラして凹みを表現 */
 .os-button:active:not(.current) {
     background-color: #CCCCCC;
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.3) inset; /* 内側に影を入れて凹ませる */
-    transform: translate(1px, 1px); /* 1px押し込まれたような微移動 */
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3) inset;
+    transform: translate(1px, 1px);
 }
 
 .os-button.current {
-    background-color: #000000;
-    color: #FFFFFF;
-    box-shadow: none;
+    background-color: #999;
+    color: #FFF;
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.2) inset;
 }
 
 .site-footer {
-    margin-top: 40px;
+    margin-top: 60px;
     text-align: center;
     font-size: 12px;
-    color: #555;
+    color: #444;
+    line-height: 1.8;
 }
 
 /* --- レスポンシブ調整 --- */
 
-/* タブレット・中画面 (1024px以下に閾値を最適化) */
-@media screen and (max-width: 1024px) {
-    .top-nav {
-        height: 44px; /* タッチしやすいように少し高く */
+/* タブレット・中画面 (1300px以下) */
+@media screen and (max-width: 1300px) {
+    .title {
+        font-size: 16px !important; /* 40pxなどの極端な拡大を抑え、適正サイズに */
+        padding: 4px 20px !important;
+    }
+
+    .title-bar {
+        min-height: 36px !important;
+    }
+
+    .content {
+        padding: 32px !important;
+        font-size: 18px !important; /* 40pxから読みやすい18pxへ調整 */
+        line-height: 1.7 !important;
+        letter-spacing: 0.06em !important;
     }
     
+    .content p {
+        font-size: 18px !important;
+        margin-bottom: 1.5em !important;
+    }
+
+    /* 見出しも1300px以下の画面幅に合わせて最適化 */
+    h1 { font-size: 28px !important; }
+    h2 { font-size: 24px !important; border-left-width: 6px !important; }
+
+    .top-nav {
+        height: 44px; /* ボタンがはみ出さない高さに調整 */
+    }
+
     .top-nav .os-button {
+        height: 75%; 
         font-size: 16px;
-        padding: 4px 16px;
     }
 
     .desktop-area {
         padding-top: 80px;
     }
 
-    .title-bar {
-        min-height: 36px;
+    .window {
+        max-width: 95%;
     }
 
-    .title {
-        font-size: 16px;
-    }
-
-    .content {
-        padding: 24px;
-        font-size: 18px; /* 全体的に少しだけ拡大 */
-    }
-
-    h1 { font-size: 28px; }
-    h2 { font-size: 24px; }
-    h3 { font-size: 18px; }
-    
+    /* .year-nav内のボタン（html側で記述されている想定） */
     .year-nav .os-button {
-        padding: 8px 16px;
+        padding: 10px 20px;
         font-size: 18px;
     }
 }
 
-/* スマホ特化 (480px以下) */
-@media screen and (max-width: 480px) {
-    .top-nav {
-        height: 48px;
-    }
-    
-    .top-nav .os-button {
-        font-size: 15px;
-        padding: 4px 10px;
+/* スマホ特化 (768px以下) */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 15px !important;
     }
 
-    .desktop-area {
-        padding-top: 72px;
-        padding-left: 10px;
-        padding-right: 10px;
-        gap: 20px;
+    .title-bar {
+        min-height: 34px !important;
+    }
+
+    .content {
+        padding: 24px 16px !important;
+        font-size: 16px !important; /* スマホで一番見やすいサイズ */
+    }
+
+    .content p {
+        font-size: 16px !important;
     }
 
     .window {
         max-width: 100%;
-        /* スマホ画面を広く使うため、左右の枠線を除去しない方がクラシックOS感が出るため残しつつ最適化 */
+        border-left: none;
+        border-right: none;
     }
 
-    .title-bar {
-        min-height: 34px;
+    .desktop-area {
+        padding-top: 76px;
     }
 
-    .title {
-        font-size: 15px;
-    }
-
-    .content {
-        padding: 20px 16px;
-        font-size: 16px; /* スマホの閲覧距離に適したサイズ */
-    }
-
-    h1 { font-size: 22px; }
-    h2 { font-size: 19px; border-left-width: 4px; }
-    h3 { font-size: 16px; }
+    h1 { font-size: 24px !important; }
+    h2 { font-size: 20px !important; }
 
     .site-footer {
-        font-size: 11px;
+        font-size: 12px;
+    }
+
+    .top-nav {
+        height: 42px;
+    }
+    
+    .top-nav .os-button {
+        font-size: 14px;
     }
 }
